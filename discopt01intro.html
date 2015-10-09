@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Лекции по дискретной оптимизации</title>
+
+		<meta name="description" content="See http://www.dainiak.com/ru/teaching/ for course syllabus">
+		<meta name="author" content="Alex Dainiak @ Moscow Inistitute of Physics and Technology">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/extras.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<video class="webcam permanent" style="
+			left: 20px;
+			top:20px;
+			height:100px;
+			position:fixed;
+			z-index:100;
+			transition: 0.5s ease;
+			opacity: 0.3;">
+		</video>
+<div class="reveal"><div class="slides">
+
+
+<section style="text-align: center">
+	<h1>Дискретная оптимизация</h1>
+	<p>Лектор: Александр Дайняк</p>
+	<p>МФТИ, осенний семестр 2015/2016 года</p>
+</section>
+
+<section>
+	<h2>Общая задача оптимизации</h2>
+	<p>Дано:</p>
+<ul>
+	<li>$\calS$ — заданное множество (область поиска),</li>
+	<li>$f$ — функция на множестве $\calS$.</li>
+</ul>
+<p>Найти:</p>
+<ul>
+	<li>$x\in \calS$, такой, что $f(y)\le f(x)$ для любого $y\in \calS$.</li>
+</ul>
+</section>
+
+<section>
+	<section>
+	<h2>Покрытие множеств (set cover)</h2>
+		<p>Дано:</p>
+		<ul>
+			<li>$S_1,\,\ldots,\,S_n\subseteq \calD$.</li>
+		</ul>
+		<p>Найти:</p>
+		<ul>
+			<li>минимальное $m$ и такие $i_1,\,\ldots,\,i_m$, что \[S_{i_1}\cup\ldots\cup S_{i_m}.\]</li>
+			<li>Тест $\step{\floor{x}}\step{\le} \step{\ceil{x}}$</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Покрытие множеств (set cover)</h2>
+		<p>Дано:</p>
+		<ul>
+			<li>$S_1,\,\ldots,\,S_n\subseteq \calD$.</li>
+		</ul>
+		<p>Найти:</p>
+		<ul>
+			<li>минимальное $m$ и такие $i_1,\,\ldots,\,i_m$, что $S_{i_1}\cup\ldots\cup S_{i_m}$.</li>
+		</ul>
+	</section>
+</section>
+
+
+
+
+	</div></div>
+
+	 	<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+				animation: {
+					macros:    [
+						['immediately', 'during 0s'],
+						['slowly', 'during 1s'],
+						['fast', 'during 0.2s'],
+						['dim', 'apply opacity = 0.4 to'],
+						['highlight', 'apply color = red to']
+					],
+					default_transition_duration: undefined
+				},
+				highlighting: {
+					ace_main_url: 'plugin/highlight-ace/ace/ace.js',
+					ace_static_highlighter_url: 'plugin/highlight-ace/ace/ext-static_highlight.js',
+					editor_in_place: true,
+					close_editor_on_blur: false,
+					mouseclick_modifier_key: null,
+					editor_default_font_size: '14pt'
+				},
+
+				webcam: {
+					fullscreen_horizontal_padding: 20,
+					fullscreen_vertical_padding: 20,
+					fullscreen_opacity: 1,
+					shrink_on_overview: true
+				},
+
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight-ace/highlight-ace.js', condition: function() { return !!document.querySelector( 'pre code' ); }},
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					//{ src: 'plugin/notes/notes.js', async: true },
+					//{ src: 'plugin/math-mod/math.js' },
+					{ src: 'plugin/animation/cssanimation.js' },
+					{ src: 'plugin/math-katex/math-katex.js', async: false }
+					//{ src: 'plugin/webcam/webcam.js' },
+					//{ src: 'plugin/fragkey/fragkey.js' }
+					//{ src: 'plugin/search/search.js' }
+				]
+			});
+
+
+		</script>
+	</body>
+</html>

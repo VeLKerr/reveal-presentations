@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Визуализация данных</title>
+
+		<meta name="description" content="See http://www.dainiak.com/ru/teaching/ for course syllabus">
+		<meta name="author" content="Alex Dainiak @ Moscow Inistitute of Physics and Technology">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/extras.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+<body>
+<video class="webcam permanent" style="
+	left: 20px;
+	top:20px;
+	height:100px;
+	position:fixed;
+	z-index:100;
+	transition: 0.5s ease;
+	opacity: 0.3;">
+</video>
+<div class="reveal"><div class="slides">
+
+
+<section style="text-align: center">
+	<h1 id="mainTitle">Математические методы визуализации данных</h1>
+	<p>Лектор: Александр Дайняк</p>
+	<p>МФТИ, осенний семестр 2015/2016 года</p>
+	<script type="text/animation">
+		execute """document.getElementById('mainTitle').innerHTML = '<br/>Визуализация данных'""";
+	next:
+		execute """document.getElementById('mainTitle').innerHTML = '<br/>Визуализация'""";
+	</script>
+</section>
+
+<section>
+	<section>
+		<h2>Визуализация с древних времён</h2>
+		<img style="float: right;" class="stretch" src="img/visual/saxons.jpg">
+		<p style="float: left; padding-left: 20px;">Генеалогическое дерево<br/> династии Саксонов (XII век)</p>
+	</section>
+	<section>
+		<h2>Визуализация с древних времён</h2>
+		<img style="float: right;" class="stretch" src="img/visual/virtuestree.jpg">
+		<p style="float: left; padding-left: 20px;">Дерево добродетелей (XIV век)</p>
+	</section>
+	<section>
+		<h2>Визуализация с древних времён</h2>
+		<img style="float: right;" class="stretch" src="img/visual/sinstree.jpg">
+		<p style="float: left; padding-left: 20px;">Дерево грехов (XIV век)</p>
+	</section>
+	<section>
+		<h2>Визуализация с древних времён</h2>
+		<p>Помеченные деревья из статьи Кэли (1857)</p>
+		<img class="stretch" src="img/visual/cayley.jpg">
+		<p>A. Cayley. On the Theory of the Analytical Forms Called Trees. Philosophical Magazine, 4(13):172–176, 1857.</p>
+	</section>
+	<section>
+		<h2>Визуализация с древних времён</h2>
+		<img style="float: right;" class="stretch" src="img/visual/k12.jpg">
+		<p style="padding-left: 20px;">
+			Логический квадрат <br>— диаграмма отношений между силлогизмами.<br>Juan de Celaya (1490—1558)</p>
+	</section>
+	<section>
+		<h2>Визуализация с древних времён</h2>
+		<img style="float: right;" class="stretch" src="img/visual/knighttour.jpg">
+		<p style="padding-left: 20px;">
+			Иллюстрация А.-Т. Вандермонда (1771 г.) к задаче об обходе шахматной доски конём.</p>
+	</section>
+	<section>
+		<h2>Визуализация с древних времён</h2>
+		<img style="float: right;" class="stretch" src="img/visual/icosian.jpg">
+		<p style="padding-left: 20px;">
+			Иллюстрация У. Гамильтона (1857) к задаче об обходе икосаэдра.</p>
+	</section>
+	<section>
+		<h2>Визуализация с древних времён</h2>
+		<img style="float: right;" class="stretch" src="img/visual/molecules.jpg">
+		<p style="padding-left: 20px;">Графы молекул из статьи А.К. Брауна (1864).</p>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>Ранние статьи по визуализации</h2>
+		<ul>
+			<li>W.T. Tutte ’1963. <span style="padding-left:1em" class="fragment sliding-underline">How to draw a graph</span></li>
+			<li>D.E. Knuth ’1970. <span style="padding-left:1em" class="fragment sliding-underline">How shall we draw a tree</span></li>
+		</ul>
+	</section>
+	<section>
+		<h2>Д. Кнут о визуализации графов</h2>
+		<p>D.E. Knuth (GD' 1996):</p>
+			<blockquote class="fragment">Graph drawing is the best possible field I can think of: it merges aesthetics, mathematical beauty and wonderful algorithms.
+	<br>It therefore provides a harmonic balance between the left and right brain parts.</blockquote>
+			<blockquote class="fragment">A good graph drawing algorithm should leave something for the user’s satisfaction.</blockquote>
+	</section>
+
+</section>
+
+<section>
+	<section>
+		<img src="img/visual/tufte.jpg" class="stretch">
+	</section>
+
+	<section>
+		<img src="img/visual/fromTufte.jpg" class="stretch">
+	</section>
+</section>
+
+<section>
+	<section>
+		<iframe class="stretch" src="http://christophermanning.org/gists/1703449/#/[10]50/100/0"></iframe>
+	</section>
+
+	<section>
+		<iframe class="stretch" src="http://bl.ocks.org/mbostock/raw/4060366/"></iframe>
+	</section>
+
+	<section>
+		<iframe class="stretch" src="http://js.cytoscape.org/demos/aedff159b0df05ccfaa5/"></iframe>
+	</section>
+
+	<section>
+		<iframe class="stretch" src="http://js.cytoscape.org/demos/f64e811fc3311414e083/"></iframe>
+	</section>
+</section>
+
+<section>
+	<iframe class="stretch" src="http://www.google.ru/design/spec/material-design/introduction.html"></iframe>
+</section>
+
+<section>
+	<h2>План курса:</h2>
+	<ul>
+		<li class="fragment">Визуализация графов</li>
+		<li class="fragment">Визуализация данных</li>
+		<li class="fragment"><span style="text-decoration: line-through">Полный раздрай</span> Визуализация и визуальная коммуникация</li>
+	</ul>
+</section>
+
+</div></div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+	// Full list of configuration options available at:
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+		animation: {
+			macros:    [
+				['immediately', 'during 0s'],
+				['slowly', 'during 1s'],
+				['fast', 'during 0.2s'],
+				['dim', 'apply opacity = 0.4 to'],
+				['highlight', 'apply color = red to']
+			],
+			default_transition_duration: undefined
+		},
+		highlighting: {
+			ace_main_url: 'plugin/highlight-ace/ace/ace.js',
+			ace_static_highlighter_url: 'plugin/highlight-ace/ace/ext-static_highlight.js',
+			editor_in_place: true,
+			close_editor_on_blur: false,
+			mouseclick_modifier_key: null,
+			editor_default_font_size: '14pt'
+		},
+
+		webcam: {
+			fullscreen_horizontal_padding: 20,
+			fullscreen_vertical_padding: 20,
+			fullscreen_opacity: 1,
+			shrink_on_overview: true
+		},
+
+
+		// Optional reveal.js plugins
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight-ace/highlight-ace.js', condition: function() { return !!document.querySelector( 'pre code' ); }},
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			//{ src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/math-mod/math.js' },
+			{ src: 'plugin/animation/cssanimation.js' },
+			//{ src: 'plugin/math-katex/math-katex.js', async: false }
+			{ src: 'plugin/webcam/webcam.js' },
+			//{ src: 'plugin/fragkey/fragkey.js' }
+			//{ src: 'plugin/search/search.js' }
+		]
+	});
+
+
+</script>
+</body>
+</html>
