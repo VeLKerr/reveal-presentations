@@ -53,13 +53,13 @@
 					<ul>
 						<li>Полные бинарные деревья</li>
 						<ul style="list-style-type: circle">
-							<li>$c_0 = e$, $c_i = c_{i-1} &#8853; c_{i-1}$ <code>for</code> $i &#8805; 1$</li>
+							<li>$c_0 = e$, $c_i = c_{i-1} \oplus c_{i-1}$ <code>for</code> $i \ge 1$</li>
 						</ul>
 						<li class="fragment fr1">Деревья Фибоначчи
 							<ul style="list-style-type: circle">
-								<li>$F_0 = e$, &emsp; $F_1 = e &#8853; e$,
+								<li>$F_0 = e$, &emsp; $F_1 = e \oplus e$,
 									<br>
-									$F_i = F_{i-1} &#8853; F_{i-2}$ <code>for</code> $i > 1$</li>
+									$F_i = F_{i-1} \oplus F_{i-2}$ <code>for</code> $i > 1$</li>
 								<li>
 									нумерация вершин: $n_F(0) = 0$, &emsp;$n_F(1) = 1$, <br>
 									$n_F(i) = n_F(i-1)+n_F(i-2)+1$ <code>for</code> $i > 1$
@@ -74,7 +74,7 @@
 					<ul>
 						<li class="fragment fade-in">Вершины имеют целочисл. координаты<br><br></li>
 						<li class="fragment fade-in">Рёбра – прямые отрезки<br><br></li>
-						<li class="fragment fade-in">Потомок имеет большую ординату, чем родитель (ось <b>OY</b> направлена вниз)</li>
+						<li class="fragment fade-in">Потомок имеет большую ординату, чем родитель (ось <strong>OY</strong> направлена вниз)</li>
 					</ul>
 				</section>
 
@@ -85,18 +85,18 @@
 								дерева имеет нижнюю границу $O(n \log n)$.</div>
 					</section>
 					<section style="text-align: center">
-						<h4>Доказательство</h4>
-						<p align="left">&emsp;Пусть $&#8704; h > 0$ $n = 2^h - 1, t_n = p_n &#8853; c_n$</p>
-						<img class="stretch" src="images/1.jpeg" alt="Tree example">
+						<h3>Доказательство</h3>
+						<p align="left">&emsp;Пусть $\forall h > 0$ $n = 2^h - 1, t_n = p_n \oplus c_n$</p>
+						<img class="stretch" src="img/visual/vis_hvtrees/1.jpeg" alt="Tree example">
 						<ul style="text-align: left">
 							<li>высота $C_n$ равна $h$</li>
 							<li>$P_n$ – это цепочка из $h$ вершин</li>
 						</ul>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
-						<ul><li>Докажем, что ширина $w_h &#8805; h$</li>
-						Т.к. $w_1 = 1$, то нужно док-ть $w_h &#8805; w_{h-1} + 1$ <br>
+						<h3 style="text-align: center">Доказательство</h3>
+						<ul><li>Докажем, что ширина $w_h \ge h$</li>
+						Т.к. $w_1 = 1$, то нужно док-ть $w_h \ge w_{h-1} + 1$ <br>
 							<li class="fragment" style="list-style-type: none">
 								<ul style="list-style-type: circle">
 									<li>$\delta^m_{c_h}$ - укладка $C_n$ с минимальной шириной</li>
@@ -118,12 +118,12 @@
 						</ul>
 					</section>
 					<section style="text-align: center">
-						<h4 >Доказательство</h4>
+						<h3 >Доказательство</h3>
 						<ul><li>Рассмотрим случай, когда $\delta_2$ ниже $p$.</li></ul>
-						<img class="stretch" src="images/2.jpeg" alt="Proving theorem">
+						<img class="stretch" src="img/visual/vis_hvtrees/2.jpeg" alt="Proving theorem">
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<ul>
 							<li>Корень $\delta^m_{c_h}$ может соединяться с корнями $\delta_1$, $\delta_2$
 							без пересечений и в соответствии с <a href="#/2"> требованиями</a>.</li>
@@ -142,7 +142,7 @@
 							либо <i>слева направо</i>,
 							либо <i>сверху вниз</i>.
 						</li>
-						<img class="stretch" src="images/3.jpeg" alt="h_v_embedding">
+						<img class="stretch" src="img/visual/vis_hvtrees/3.jpeg" alt="h_v_embedding">
 					</ul>
 				</section>
 
@@ -154,16 +154,16 @@
 							<li>пустое дерево (только корень): $e$</li>
 							<li>h-v-укладка дерева $t_i$: $\delta_{t_i}$</li>
 							<li>корень $t_i$: $\rho_{\delta_{t_i}}$</li>
-							<li>горизонтальное склеивание: $&#8854;$
+							<li>горизонтальное склеивание: $\ominus$
 								<br>
 								<div align="center">
-                                    <img style="border-style: none" width="32%" src="images/tree_gluing/1.jpeg" class="stretch" alt="horiz_gluing">
+                                    <img style="border-style: none" width="32%" src="img/visual/vis_hvtrees/tree_gluing/1.jpeg" class="stretch" alt="horiz_gluing">
                                 </div>
 							</li>
-							<li>вертикальное склеивание: $&#8856;$
+							<li>вертикальное склеивание: $\oslash$
 								<br>
 								<div align="center">
-                                    <img style="border-style: none" width="30%"src="images/tree_gluing/2.jpeg" class="stretch" alt="vert_gluing">
+                                    <img style="border-style: none" width="30%"src="img/visual/vis_hvtrees/tree_gluing/2.jpeg" class="stretch" alt="vert_gluing">
                                 </div>
 							</li>
 						</ul>
@@ -174,12 +174,12 @@
 					<h3 style="text-align: center">Исключительные ситуации</h3>
 					<ul><li>Если одно из деревьев пустое
 						<ul>
-							<li style="list-style-type: circle">$\epsilon &#8854; \epsilon = \epsilon &#8856; \epsilon = &#8226;$</li>
-							<li class="fragment" style="list-style-type: circle">$\epsilon &#8854; \delta_t = \epsilon &#8856; \delta_t = $
-                                <img style="border-style: none" width="20%" src="images/tree_gluing/3.jpeg" class="stretch">
+							<li style="list-style-type: circle">$\epsilon \ominus \epsilon = \epsilon \oslash \epsilon = \bullet$</li>
+							<li class="fragment" style="list-style-type: circle">$\epsilon \ominus \delta_t = \epsilon \oslash \delta_t = $
+                                <img style="border-style: none" width="20%" src="img/visual/vis_hvtrees/tree_gluing/3.jpeg" class="stretch">
                             </li>
-							<li class="fragment" style="list-style-type: circle">$\delta_t &#8854; \epsilon = \delta_t &#8856; \epsilon = $
-                                <img style="border-style: none" width="15%" src="images/tree_gluing/4.jpeg" class="stretch">
+							<li class="fragment" style="list-style-type: circle">$\delta_t \ominus \epsilon = \delta_t \oslash \epsilon = $
+                                <img style="border-style: none" width="15%" src="img/visual/vis_hvtrees/tree_gluing/4.jpeg" class="stretch">
                             </li>
 						</ul>
 					</li></ul>
@@ -192,16 +192,16 @@
 						превышающая по площади h-v не более чем в 2 раза.
 					</section>
 					<section style="text-align: center">
-						<h4>Доказательство</h4>
+						<h3>Доказательство</h3>
 						<p style="text-align: left">Получим $\delta'_t$ из $\delta_t$ с помощью смещения:</p>
-						<img src="images/4.jpeg" class="stretch" alt="offsetting">
+						<img src="img/visual/vis_hvtrees/4.jpeg" class="stretch" alt="offsetting">
 						<ul style="text-align: left">
 							<li>каждая вершина $(x, y)$ переходит в $(x, x + y)$,</li>
 							<li>рёбра перемещаются соответственно.</li>
 						</ul>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<p>Докажем, что в полученном дереве рёбра могут быть только вертикальные или
 							диаг. под углом 45&deg;.</p>
 						<ul><li>Т.к. увеличились только $y$-координаты вершин, вертикальные рёбра не
@@ -209,14 +209,14 @@
 						</ul>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<p>Докажем, что в полученном дереве рёбра могут быть только вертикальные или
 							диаг. под углом 45&deg;.</p>
 						<ul>
 							<li>Горизонтальные переходят в диагональные.</li>
 						</ul>
 						<table><tr>
-							<td width="60%"><img src="images/5.jpeg" class="stretch" alt="Lemma_proving" width="100%"></td>
+							<td width="60%"><img src="img/visual/vis_hvtrees/5.jpeg" class="stretch" alt="Lemma_proving" width="100%"></td>
 							<td style="vertical-align: top"><div style="font-size: 70%"><br><ul style="list-style-type: circle">
 								<li>прямоугльный треуг.</li>
 								<li>катеты равны</li>
@@ -224,32 +224,32 @@
 						</tr></table>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<div>Докажем, что рёбра не пересекаются.</div>
 						<ul><li class="fragment" >
 							<div>Рёбра одинак. направления, могут только накладываться</div>
 							<div class="fragment">
-								<div align="center"><img style="border-style: none" src="images/arrows/1.jpeg" class="stretch" alt="Blue arrow"></div>
+								<div align="center"><img style="border-style: none" src="img/visual/vis_hvtrees/arrows/1.jpeg" class="stretch" alt="Blue arrow"></div>
 								их вершины имеют равные координаты
 							</div>
 							<div class="fragment">
-								<div align="center"><img style="border-style: none" src="images/arrows/1.jpeg" class="stretch" alt="Blue arrow"></div>
+								<div align="center"><img style="border-style: none" src="img/visual/vis_hvtrees/arrows/1.jpeg" class="stretch" alt="Blue arrow"></div>
 								<div align="center"> <strong>противоречие!</strong> </div>
 							</div>
 						</li></ul>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<div>Докажем, что рёбра не пересекаются.</div>
 						<ul><li>Рёбра разных направлений</li></ul>
 						<table cellpadding="0" cellspacing="0" border="5">
 							<tr>
 								<td width="50%" class="center">
-									<img src="images/6.jpeg" class="stretch" alt="Line intersection" width="60%">
+									<img src="img/visual/vis_hvtrees/6.jpeg" class="stretch" alt="Line intersection" width="60%">
                                     <table class="fragment" data-fragment-index="3"><tr>
                                         <td width="70%" style="font-size: 65%; vertical-align: top">Укладка $\delta_t$ имеет <br> пересечения</td>
                                         <td>
-                                            <img style="border-style: none" src="images/arrows/3.jpeg" class="stretch" alt="green arrow" width="110%">
+                                            <img style="border-style: none" src="img/visual/vis_hvtrees/arrows/3.jpeg" class="stretch" alt="green arrow" width="110%">
                                         </td>
                                     </tr></table>
 								</td>
@@ -263,7 +263,7 @@
 									</ul>
 									<div class="fragment" data-fragment-index="1" style="font-size: 70%">
 										<div align="center">
-                                            <img style="border-style: none" src="images/arrows/2.jpeg" class="stretch" alt="red arrow" width="12%">
+                                            <img style="border-style: none" src="img/visual/vis_hvtrees/arrows/2.jpeg" class="stretch" alt="red arrow" width="12%">
                                         </div>
 										$x_1 \le x_3 \le x_2$ <br>
 										$x_3 + y_3 \le x_3 + y_1 \le x_3 + y_4$<br>
@@ -274,14 +274,14 @@
                         </table>
                         <table class="fragment" data-fragment-index="4" style="border-style: none; border-padding: 0"><tr>
                             <td width="30%" align="center">
-                                <img style="border-style: none" src="images/arrows/4.jpeg" class="stretch" alt="violet arrow" width="20%" height="30%">
+                                <img style="border-style: none" src="img/visual/vis_hvtrees/arrows/4.jpeg" class="stretch" alt="violet arrow" width="20%" height="30%">
                                 <div><strong style="font-size: 60%">Противоречие!</strong></div>
                             </td>
                             <td></td>
                         </tr></table>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<div>Осталось доказать соотношение площадей</div>
 						<div style="font-size: 80%">
 							<div>Пусть $w_{\delta_t} = h_{\delta_t}$</div>
@@ -291,7 +291,7 @@
 							</ul>
 						</div>
 						<div class="fragment" style="text-align: center">
-							<img style="border-style: none" src="images/arrows/2.jpeg">
+							<img style="border-style: none" src="img/visual/vis_hvtrees/arrows/2.jpeg">
 							$$S_{\delta_t} \le 2S_{\delta_t}$$
 							(равенство при $h_{\delta_t} = w_{\delta_t}$)
 						</div>
@@ -306,9 +306,9 @@ def BT():
 	if "$t = e$":
 		"$\delta_t = \varepsilon$"
 	if "$t = t_1 \oplus t_2$" and "$w_{t_1} \ge w_{t_2}$"
-		"$\delta_t = \delta_{t_1} &#8856; \delta_{t_2}$"
+		"$\delta_t = \delta_{t_1} \oslash \delta_{t_2}$"
 	if "$t = t_1 \oplus t_2$" and "$w_{t_1} < w_{t_2}$":
-		"$\delta_t = \delta_{t_2} &#8856; \delta_{t_1}$"
+		"$\delta_t = \delta_{t_2} \oslash \delta_{t_1}$"
 </code></pre>
 						<div class="fragment">
 							&emsp; <strong>Теорема 2.</strong> Для дерева с $n$ вершинами данный алгоритм строит h-v-укладку площади не более
@@ -316,7 +316,7 @@ def BT():
 						</div>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<div>Докажем по методу мат. индукции:</div>
 						<div>
 							$h_{\delta_t} \le n$
@@ -332,7 +332,7 @@ def BT():
 						</ul>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<ul><li>
 							<strong>Доказательство.</strong> Предположим:
 							<ul style="list-style-type: circle; font-size: 80%">
@@ -352,7 +352,7 @@ def BT():
 						</li></ul>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<table><tr>
 							<td width="30%">
 								<ul><li>
@@ -374,7 +374,7 @@ def BT():
 						</li></ul>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<ul><li>
 							<strong>Случай 3.</strong><br>
 							$h_{\delta_t} = h_{\delta_{t_1}} + h_{\delta_{t_2}}$<br>
@@ -391,7 +391,7 @@ def BT():
 						</li></ul>
 					</section>
 					<section>
-						<h4 style="text-align: center">Доказательство</h4>
+						<h3 style="text-align: center">Доказательство</h3>
 						<ul><li>
 							Алгоритм использует <i>линейное</i> время и <i>линейную</i> память
 						</li></ul>
