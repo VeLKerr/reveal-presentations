@@ -20,10 +20,11 @@
 		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
 		<style>
-			.large_margin div{
-				margin-top: 100%;
-				margin-bottom: 1000%;
-				line-height: 1000%;
+			.left_indent{ /*for main headers*/
+				padding-left: 10%;
+			}
+			.small_bot_indent{
+				padding-bottom: 4%;
 			}
 		</style>
 
@@ -42,14 +43,13 @@
 			<div class="slides">
 				<section>
 					<h2>Методы укладки деревьев</h2>
-					<h3>ФИВТ МФТИ</h3>
-					<br><br><br><br>
-					<div class="large_margin" align="right">
+					<h3 style="padding-bottom: 25%">ФИВТ МФТИ</h3>
+					<div style="padding-bottom: 12%" align="right">
                         <a href="mailto:Anellieme-n-fin@mail.ru"> Олег Ивченко</a>, гр. 094а
-					</div><br><br>
-					<div align="center" style="font-size: 80%">
+					</div>
+					<div align="center" style="font-size: 80%; padding-bottom: 2%">
 						(в рамках курса <a href="mailto:dainiak@gmail.com"> А. Дайняка</a> <strong>"Визуализация данных" </strong>)
-					</div><br>
+					</div>
                     <div align="center">
                         <small>Осень 2015</small>
                     </div>
@@ -64,12 +64,11 @@
 						</ul>
 						<li class="fragment fr1">Деревья Фибоначчи
 							<ul style="list-style-type: circle">
-								<li>$F_0 = e, \quad F_1 = e \oplus e$,
-									<br>
-									$F_i = F_{i-1} \oplus F_{i-2}$ <code>for</code> $i \gt 1$</li>
+								<li><div>$F_0 = e, \quad F_1 = e \oplus e$,</div>
+									<div>$F_i = F_{i-1} \oplus F_{i-2}$ <code>for</code> $i \gt 1$</div></li>
 								<li>
-									нумерация вершин: $n_F(0) = 0, \quad n_F(1) = 1$, <br>
-									$n_F(i) = n_F(i-1)+n_F(i-2)+1$ <code>for</code> $i \gt 1$
+									<div>нумерация вершин: $n_F(0) = 0, \quad n_F(1) = 1$,</div>
+									<div>$n_F(i) = n_F(i-1)+n_F(i-2)+1$ <code>for</code> $i \gt 1$</div>
 								</li>
 							</ul>
 						</li>
@@ -79,9 +78,9 @@
 				<section style="text-align: left">
 					<h3 style="text-align: center">Требования к вертикальной укладке</h3>
 					<ul>
-						<li class="fragment fade-in">Вершины имеют целочисл. координаты<br><br></li>
-						<li class="fragment fade-in">Рёбра – прямые отрезки<br><br></li>
-						<li class="fragment fade-in">Потомок имеет большую ординату, чем родитель (ось <strong>OY</strong> направлена вниз)</li>
+						<li class="fragment fade-in"><div class="small_bot_indent">Вершины имеют целочисл. координаты</div></li>
+						<li class="fragment fade-in"><div class="small_bot_indent">Рёбра – прямые отрезки</div></li>
+						<li class="fragment fade-in"><div class="small_bot_indent">Потомок имеет большую ординату, чем родитель (ось <strong>OY</strong> направлена вниз)</div></li>
 					</ul>
 				</section>
 
@@ -93,7 +92,7 @@
 					</section>
 					<section style="text-align: center">
 						<h3>Доказательство</h3>
-						<p align="left">&emsp;Пусть $\forall h \gt 0$ $n = 2^h - 1, t_n = p_n \oplus c_n$</p>
+						<div class="small_bot_indent" align="left">&emsp;Пусть $\forall h \gt 0$ $n = 2^h - 1, t_n = p_n \oplus c_n$</div>
 						<img class="stretch" src="img/visual/vis_hvtrees/1.jpeg" alt="Tree example">
 						<ul style="text-align: left">
 							<li>высота $C_n$ равна $h$</li>
@@ -103,7 +102,7 @@
 					<section>
 						<h3 style="text-align: center">Доказательство</h3>
 						<ul><li>Докажем, что ширина $w_h \ge h$</li>
-						Т.к. $w_1 = 1$, то нужно док-ть $w_h \ge w_{h-1} + 1$ <br>
+						<div>Т.к. $w_1 = 1$, то нужно док-ть $w_h \ge w_{h-1} + 1$</div>
 							<li class="fragment" style="list-style-type: none">
 								<ul style="list-style-type: circle">
 									<li>$\delta^m_{c_h}$ - укладка $C_n$ с минимальной шириной</li>
@@ -161,14 +160,12 @@
 							<li>пустое дерево (только корень): $e$</li>
 							<li>h-v-укладка дерева $t_i$: $\delta_{t_i}$</li>
 							<li>корень $t_i$: $\rho_{\delta_{t_i}}$</li>
-							<li>горизонтальное склеивание: $\ominus$
-								<br>
+							<li><div>горизонтальное склеивание: $\ominus$</div>
 								<div align="center">
                                     <img style="border-style: none" width="32%" src="img/visual/vis_hvtrees/tree_gluing/1.jpeg" class="stretch" alt="horiz_gluing">
                                 </div>
 							</li>
-							<li>вертикальное склеивание: $\oslash$
-								<br>
+							<li><div>вертикальное склеивание: $\oslash$</div>
 								<div align="center">
                                     <img style="border-style: none" width="30%"src="img/visual/vis_hvtrees/tree_gluing/2.jpeg" class="stretch" alt="vert_gluing">
                                 </div>
@@ -181,7 +178,7 @@
 					<h3 style="text-align: center">Исключительные ситуации</h3>
 					<ul><li>Если одно из деревьев пустое
 						<ul>
-							<li style="list-style-type: circle">$\epsilon \ominus \epsilon = \epsilon \oslash \epsilon = \bullet$</li>
+							<li class="fragment" style="list-style-type: circle">$\epsilon \ominus \epsilon = \epsilon \oslash \epsilon = \bullet$</li>
 							<li class="fragment" style="list-style-type: circle">$\epsilon \ominus \delta_t = \epsilon \oslash \delta_t = $
                                 <img style="border-style: none" width="20%" src="img/visual/vis_hvtrees/tree_gluing/3.jpeg" class="stretch">
                             </li>
@@ -200,7 +197,7 @@
 					</section>
 					<section style="text-align: center">
 						<h3>Доказательство</h3>
-						<p style="text-align: left">Получим $\delta'_t$ из $\delta_t$ с помощью смещения:</p>
+						<div class="small_bot_indent" style="text-align: left">Получим $\delta'_t$ из $\delta_t$ с помощью смещения:</div>
 						<img src="img/visual/vis_hvtrees/4.jpeg" class="stretch" alt="offsetting">
 						<ul style="text-align: left">
 							<li>каждая вершина $(x, y)$ переходит в $(x, x + y)$,</li>
@@ -209,25 +206,25 @@
 					</section>
 					<section>
 						<h3 style="text-align: center">Доказательство</h3>
-						<p>Докажем, что в полученном дереве рёбра могут быть только вертикальные или
-							диаг. под углом 45&deg;.</p>
+						<div class="small_bot_indent">Докажем, что в полученном дереве рёбра могут быть только вертикальные или
+							диаг. под углом 45&deg;.</div>
 						<ul><li>Т.к. увеличились только $y$-координаты вершин, вертикальные рёбра не
 							изменили направление.</li>
 						</ul>
 					</section>
 					<section>
 						<h3 style="text-align: center">Доказательство</h3>
-						<p>Докажем, что в полученном дереве рёбра могут быть только вертикальные или
-							диаг. под углом 45&deg;.</p>
+						<div class="small_bot_indent">Докажем, что в полученном дереве рёбра могут быть только вертикальные или
+							диаг. под углом 45&deg;.</div>
 						<ul>
 							<li>Горизонтальные переходят в диагональные.</li>
 						</ul>
 						<table><tr>
 							<td width="60%"><img src="img/visual/vis_hvtrees/5.jpeg" class="stretch" alt="Lemma_proving" width="100%"></td>
-							<td style="vertical-align: top"><div style="font-size: 70%"><br><ul style="list-style-type: circle">
+							<td style="vertical-align: top"><div style="font-size: 70%"><div><ul style="list-style-type: circle">
 								<li>прямоугльный треуг.</li>
 								<li>катеты равны</li>
-							</ul></div></td>
+							</ul></div></div></td>
 						</tr></table>
 					</section>
 					<section>
@@ -254,7 +251,7 @@
 								<td width="50%" class="center">
 									<img src="img/visual/vis_hvtrees/6.jpeg" class="stretch" alt="Line intersection" width="60%">
                                     <table class="fragment" data-fragment-index="3"><tr>
-                                        <td width="70%" style="font-size: 65%; vertical-align: top">Укладка $\delta_t$ имеет <br> пересечения</td>
+                                        <td width="70%" style="font-size: 65%; vertical-align: top"><div>Укладка $\delta_t$ имеет</div> <div>пересечения</div></td>
                                         <td>
                                             <img style="border-style: none" src="img/visual/vis_hvtrees/arrows/3.jpeg" class="stretch" alt="green arrow" width="110%">
                                         </td>
@@ -272,8 +269,8 @@
 										<div align="center">
                                             <img style="border-style: none" src="img/visual/vis_hvtrees/arrows/2.jpeg" class="stretch" alt="red arrow" width="12%">
                                         </div>
-										$x_1 \le x_3 \le x_2$ <br>
-										$x_3 + y_3 \le x_3 + y_1 \le x_3 + y_4$<br>
+										<div>$x_1 \le x_3 \le x_2$</div>
+										<div>$x_3 + y_3 \le x_3 + y_1 \le x_3 + y_4$</div>
                                         <div class="fragment" data-fragment-index="2">$y_3 \le y_1 \le y_4$</div>
 									</div>
 								</td>
@@ -317,18 +314,16 @@ def BT():
 	if "$t = t_1 \oplus t_2$" and "$w_{t_1} \lt w_{t_2}$":
 		"$\delta_t = \delta_{t_2} \oslash \delta_{t_1}$"
 </code></pre>
-						<div class="fragment">
+						<div class="fragment"><div class="small_bot_indent">
 							&emsp; <strong>Теорема 2.</strong> Для дерева с $n$ вершинами данный алгоритм строит h-v-укладку площади не более
 							$(n \log n + 1) n$ за линейное время и линейную память.
-						</div>
+						</div></div>
 					</section>
 					<section>
 						<h3 style="text-align: center">Доказательство</h3>
 						<div>Докажем по методу мат. индукции:</div>
-						<div>
-							$h_{\delta_t} \le n$
-							$w_{\delta_t} \le \log n + 1$
-						</div>
+						<div class="left_indent">$h_{\delta_t} \le n$</div>
+						<div class="left_indent">$w_{\delta_t} \le \log n + 1$</div>
 						<ul>
 							<li class="fragment">
 								<strong>База.</strong> Для $n = 1$ очевидно $h_1 = 1$, $w_1 \le \log 1 + 1 = 1$.
@@ -342,12 +337,12 @@ def BT():
 						<h3 style="text-align: center">Доказательство</h3>
 						<ul><li>
 							<strong>Доказательство.</strong> Предположим:
-							<ul style="list-style-type: circle; font-size: 80%">
+							<div class="small_bot_indent"><ul style="list-style-type: circle; font-size: 80%">
 								<li>$t = t_1 \oplus t_2$ - дерево с $n$ вершинами</li>
 								<li>пусть $w_{\delta_{t_1}} \le w_{\delta_{t_2}}$</li>
 								<li>деревья объединяются с помощью вертикального склеивания
 								(для $\ominus$ предположение $h_{\delta_{t_1}} \le h_{\delta_{t_2}}$)</li>
-							</ul>
+							</ul></div>
 							<div class="fragment" style="font-size: 90%">
 								Выделим 3 случая:
 								<ol>
@@ -363,39 +358,39 @@ def BT():
 						<table><tr>
 							<td width="30%">
 								<ul><li>
-									<strong>Случай 1.</strong><br>
-									$h_{\delta_t} = h_{\delta_{t_1}} + 1$<br>
-									$w_{\delta_t} = w_{\delta_{t_1}}$
+									<div><strong>Случай 1.</strong></div>
+									<div>$h_{\delta_t} = h_{\delta_{t_1}} + 1$</div>
+									<div>$w_{\delta_t} = w_{\delta_{t_1}}$</div>
 								</li></ul>
 							</td>
 							<td>
 								<ul><li>
-									<strong>Случай 2.</strong><br>
-									$h_{\delta_t} = h_{\delta_{t_1}} + h_{\delta_{t_2}}$<br>
-									$w_{\delta_t} = w_{\delta_{t_1}}$
+									<div><strong>Случай 2.</strong></div>
+									<div>$h_{\delta_t} = h_{\delta_{t_1}} + h_{\delta_{t_2}}$</div>
+									<div>$w_{\delta_t} = w_{\delta_{t_1}}$</div>
 								</li></ul>
 							</td>
-						</tr></table><br>
-						<ul style="list-style-type: circle" class="fragment"><li>
+						</tr></table>
+						<div class="small_bot_indent"><ul style="list-style-type: circle" class="fragment"><li>
 							т.к. $n_1 + n_2 \lt n$, то гипотеза выполняется.
-						</li></ul>
+						</li></ul></div>
 					</section>
 					<section>
 						<h3 style="text-align: center">Доказательство</h3>
 						<ul><li>
-							<strong>Случай 3.</strong><br>
-							$h_{\delta_t} = h_{\delta_{t_1}} + h_{\delta_{t_2}}$<br>
-							$w_{\delta_t} = w + 1$ <br>
-							<ul style="list-style-type: circle" class="fragment"><li>
-								Из <a href="#/8/1">гипотезы</a> следует: $w \le \log n_i + 1, i = \overline{1,2}$
-								<div style="padding-left: 10%">
-									<div class="fragment">$n_i \ge 2^{w-1}$</div>
-									<div class="fragment">$n = n_1 + n_2 + 1 \ge 2^w + 1$</div>
-									<div class="fragment">$w \le \log(n - 1) \le \log n$</div>
-									<div class="fragment">$w_{\delta_t} = w + 1 \le \log n + 1$</div>
-								</div>
-							</li></ul>
+							<div><strong>Случай 3.</strong></div>
+							<div>$h_{\delta_t} = h_{\delta_{t_1}} + h_{\delta_{t_2}}$</div>
+							<div>$w_{\delta_t} = w + 1$</div>
 						</li></ul>
+						<div class="small_bot_indent"><ul style="list-style-type: circle" class="fragment"><li>
+							Из <a href="#/8/1">гипотезы</a> следует: $w \le \log n_i + 1, i = \overline{1,2}$
+							<div class="left_indent">
+								<div class="fragment">$n_i \ge 2^{w-1}$</div>
+								<div class="fragment">$n = n_1 + n_2 + 1 \ge 2^w + 1$</div>
+								<div class="fragment">$w \le \log(n - 1) \le \log n$</div>
+								<div class="fragment">$w_{\delta_t} = w + 1 \le \log n + 1$</div>
+							</div>
+						</li></ul></div>
 					</section>
 					<section>
 						<h3 style="text-align: center">Доказательство</h3>
