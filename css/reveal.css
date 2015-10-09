@@ -80,7 +80,7 @@ body {
   opacity: 0.2;
   visibility: visible; }
   .reveal .slides section .fragment.fade-in.visible {
-    opacity: 0.7; }
+    opacity: 0.6; }
   .reveal .slides section .fragment.fade-in.current-fragment {
     opacity: 1; }
 
