@@ -19,6 +19,14 @@
 		<link rel="stylesheet" href="css/highlight/zenburn.css">
 		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
+		<style>
+			.large_margin div{
+				margin-top: 100%;
+				margin-bottom: 1000%;
+				line-height: 1000%;
+			}
+		</style>
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -35,17 +43,16 @@
 				<section>
 					<h2>Методы укладки деревьев</h2>
 					<h3>ФИВТ МФТИ</h3>
-                    <br>
-					<p align="right">
-						<a href="mailto:dainiak@gmail.com"> Александр Дайняк</a>,
-                        <br>
-                        <a href="mailto:Anellieme-n-fin@mail.ru"> Олег Ивченко</a>
-					</p>
-                    <br>
-					<br>
-                    <p align="center">
+					<br><br><br><br>
+					<div class="large_margin" align="right">
+                        <a href="mailto:Anellieme-n-fin@mail.ru"> Олег Ивченко</a>, гр. 094а
+					</div><br><br>
+					<div align="center" style="font-size: 80%">
+						(в рамках курса <a href="mailto:dainiak@gmail.com"> А. Дайняка</a> <strong>"Визуализация данных" </strong>)
+					</div><br>
+                    <div align="center">
                         <small>Осень 2015</small>
-                    </p>
+                    </div>
 				</section>
 
 				<section style="text-align: left">
@@ -57,12 +64,12 @@
 						</ul>
 						<li class="fragment fr1">Деревья Фибоначчи
 							<ul style="list-style-type: circle">
-								<li>$F_0 = e$, &emsp; $F_1 = e \oplus e$,
+								<li>$F_0 = e, \quad F_1 = e \oplus e$,
 									<br>
-									$F_i = F_{i-1} \oplus F_{i-2}$ <code>for</code> $i > 1$</li>
+									$F_i = F_{i-1} \oplus F_{i-2}$ <code>for</code> $i \gt 1$</li>
 								<li>
-									нумерация вершин: $n_F(0) = 0$, &emsp;$n_F(1) = 1$, <br>
-									$n_F(i) = n_F(i-1)+n_F(i-2)+1$ <code>for</code> $i > 1$
+									нумерация вершин: $n_F(0) = 0, \quad n_F(1) = 1$, <br>
+									$n_F(i) = n_F(i-1)+n_F(i-2)+1$ <code>for</code> $i \gt 1$
 								</li>
 							</ul>
 						</li>
@@ -86,7 +93,7 @@
 					</section>
 					<section style="text-align: center">
 						<h3>Доказательство</h3>
-						<p align="left">&emsp;Пусть $\forall h > 0$ $n = 2^h - 1, t_n = p_n \oplus c_n$</p>
+						<p align="left">&emsp;Пусть $\forall h \gt 0$ $n = 2^h - 1, t_n = p_n \oplus c_n$</p>
 						<img class="stretch" src="img/visual/vis_hvtrees/1.jpeg" alt="Tree example">
 						<ul style="text-align: left">
 							<li>высота $C_n$ равна $h$</li>
@@ -106,10 +113,10 @@
 							<li class="fragment">
 								Возможны 2 случая:
 								<ul style="list-style-type: circle">
-									<li>$w_{\delta_1} < w_{\delta_2}$ $(w_{\delta_1} > w_{\delta_2})$</li>
+									<li>$w_{\delta_1} \lt w_{\delta_2}$ $(w_{\delta_1} \gt w_{\delta_2})$</li>
 									<li>$w_{\delta_1} = w_{\delta_2}$</li>
 									<ul class="fragment" style="list-style-type: square">
-										<li>$w_{\delta^m_{c_h}} = w_h > w_{\delta_1} ( > w_{\delta_2})$ - очевидно</li>
+										<li>$w_{\delta^m_{c_h}} = w_h \gt w_{\delta_1} ( \gt w_{\delta_2})$ - очевидно</li>
 										<li>$w_{\delta^m_{c_h}} = w_h = w_{\delta_1} ( = w_{\delta_2})$ - Док-во от противного
 										$(w_h = w_{h - 1})$</li>
 									</ul>
@@ -305,9 +312,9 @@
 def BT():
 	if "$t = e$":
 		"$\delta_t = \varepsilon$"
-	if "$t = t_1 \oplus t_2$" and "$w_{t_1} \ge w_{t_2}$"
+	if "$t = t_1 \oplus t_2$" and "$w_{t_1} \ge w_{t_2}$":
 		"$\delta_t = \delta_{t_1} \oslash \delta_{t_2}$"
-	if "$t = t_1 \oplus t_2$" and "$w_{t_1} < w_{t_2}$":
+	if "$t = t_1 \oplus t_2$" and "$w_{t_1} \lt w_{t_2}$":
 		"$\delta_t = \delta_{t_2} \oslash \delta_{t_1}$"
 </code></pre>
 						<div class="fragment">
@@ -370,7 +377,7 @@ def BT():
 							</td>
 						</tr></table><br>
 						<ul style="list-style-type: circle" class="fragment"><li>
-							т.к. $n_1 + n_2 < n$, то гипотеза выполняется.
+							т.к. $n_1 + n_2 \lt n$, то гипотеза выполняется.
 						</li></ul>
 					</section>
 					<section>
